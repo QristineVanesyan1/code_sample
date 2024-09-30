@@ -16,7 +16,7 @@ class AppTheme {
       colorScheme: ColorScheme.fromSeed(
         seedColor: AppColors.textPrimary,
       ),
-      scaffoldBackgroundColor: AppColors.textPrimary,
+      scaffoldBackgroundColor: AppColors.accentPrimary,
       textTheme: const TextTheme(
           headlineLarge: mediumBold,
           headlineMedium: mediumBold,

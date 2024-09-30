@@ -1,5 +1,5 @@
+import 'package:code_sample/configs/configs.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/configs/configs.dart';
 
 class AppPrimaryButton extends StatelessWidget {
   const AppPrimaryButton(

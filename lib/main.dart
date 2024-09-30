@@ -1,12 +1,13 @@
+import 'package:code_sample/app/app.dart';
+import 'package:code_sample/configs/di.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_app/app/app.dart';
-import 'package:flutter_app/shared/provider.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  setup();
+  await locator.allReady();
+
   SystemChrome.setPreferredOrientations(
     [
       DeviceOrientation.portraitUp,
@@ -15,17 +16,11 @@ Future<void> main() async {
   );
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
-      statusBarIconBrightness: Brightness.light,
-      statusBarBrightness: Brightness.dark,
+      statusBarIconBrightness: Brightness.dark,
+      statusBarBrightness: Brightness.light,
     ),
   );
-  final sharedPrefs = await SharedPreferences.getInstance();
   runApp(
-    ProviderScope(
-      overrides: [
-        sharedPreferences.overrideWithValue(sharedPrefs),
-      ],
-      child: const App(),
-    ),
+    const App(),
   );
 }

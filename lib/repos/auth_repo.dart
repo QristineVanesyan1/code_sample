@@ -1,7 +1,7 @@
-import 'package:flutter_app/core/local_data_source.dart';
+import 'package:code_sample/core/local_data_source.dart';
 
 abstract class AuthRepository {
-  Future<bool> getSession();
+  Future<void> getSession();
   Future<void> setSession();
   Future<void> clearAllData();
 }
@@ -16,7 +16,7 @@ class AuthRepositoryImpl extends AuthRepository {
   }
 
   @override
-  Future<bool> getSession() async {
+  Future<void> getSession() async {
     return await localDataSource.getSession();
   }
 
